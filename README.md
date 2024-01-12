@@ -3,12 +3,12 @@
  * @Author: 舌红
  * @Date: 2024-01-10 17:00:10
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-11 17:12:49
+ * @LastEditTime: 2024-01-12 15:52:47
 -->
 # update-listener-webpack-loader
 
 ## 使用说明
-```
+```powershell
 1. npm install update-listener-webpack-loader --save-dev
 ```
 ```js
