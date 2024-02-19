@@ -1,5 +1,5 @@
 <template>
-  <div class="update-confirm">
+  <ConfirmMask>
     <div class="update-confirm__wrapper">
       <div class="update-confirm__header">
         <div class="update-confirm__title">提示</div>
@@ -15,49 +15,21 @@
         <div class="update-confirm__btn update-confirm__btn--primary" @click="confirm">确定</div>
       </div>
     </div>
-  </div>
+  </ConfirmMask>
 </template>
 
 <script>
+import DefaultMixins from '../../mixins/default'
 
 export default {
   name: 'UpdateConfirm',
-  props: {
-    content: {
-      type: String,
-      default: ''
-    }
-  },
-  methods: {
-    cancel() {
-      this.$emit('cancel')
-    },
-    confirm() {
-      this.$emit('confirm')
-    }
-  }
+  mixins: [DefaultMixins]
 }
-
 </script>
 
 <style lang="scss" scoped>
 
 .update-confirm {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 2001;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.5);
-  &::after {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    width: 0;
-    vertical-align: middle;
-  }
   &__wrapper {
     vertical-align: middle;
     width: 420px;
@@ -135,3 +107,4 @@ export default {
 }
 
 </style>
+../../mixins/default

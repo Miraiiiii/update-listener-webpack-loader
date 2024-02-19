@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-09 17:38:09
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-12 15:54:12
+ * @LastEditTime: 2024-02-19 14:47:57
  */
 
 import { openConfirm } from './components/confirm/confirm'
@@ -19,6 +19,7 @@ import { openConfirm } from './components/confirm/confirm'
  * @param {Object} options.modalProps 弹窗配置
  * @param {String} options.modalProps.content 弹窗内容
  * @param {Element} options.modalProps.mountedEl 弹窗挂载节点，默认为body
+ * @param {String} options.type 弹窗样式类型，默认为'qingmu', 可选值为'element'、'qingmu'、'custom'(暂不支持)
  * @returns {Void} 无返回值
  */
 
@@ -74,7 +75,8 @@ const ListenVersion = {
       try {
         const hasContent = options.modalProps && options.modalProps.content
         await openConfirm({
-          content: hasContent ? options.modalProps.content : '发现新版本，是否立即更新？'
+          content: hasContent ? options.modalProps.content : '为了更好的版本体验请更新到最新版本',
+          type: options.type || 'qingmu',
         }, options.modalProps && options.modalProps.mountedEl)
         window.location.reload()
       } catch (error) {

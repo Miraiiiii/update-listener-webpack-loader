@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-10 17:00:02
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-10 17:01:39
+ * @LastEditTime: 2024-02-19 11:31:22
  */
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
@@ -16,6 +16,13 @@ module.exports = defineConfig({
       template: 'public/index.html',
       // 输出文件名
       filename: 'index.html'
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        'vue$': 'vue/dist/vue.esm.js'
+      }
     }
   }
 })

@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-10 17:00:10
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-12 15:52:47
+ * @LastEditTime: 2024-02-19 14:48:50
 -->
 # update-listener-webpack-loader
 
@@ -35,3 +35,4 @@ Vue.use(UpdateListenerLoader, {
 | modalProps | Object | 弹窗配置 |
 | modalProps.content | String | 弹窗内容 |
 | modalProps.mountedEl | Element | 弹窗挂载节点，默认为body |
+| type | String | 弹窗样式类型，默认为'qingmu', 可选值为'element'、'qingmu'、'custom'(暂不支持) |

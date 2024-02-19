@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-10 16:16:52
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-11 16:48:49
+ * @LastEditTime: 2024-02-19 14:47:50
  */
 import ListenerLoader from "./updateListener/index.js"
 
@@ -15,6 +15,10 @@ import ListenerLoader from "./updateListener/index.js"
  * @param {Number} options.interval 检查更新间隔时间，默认为5分钟，单位为毫秒
  * @param {Boolean} options.isTip 是否提示更新，默认为true
  * @param {Boolean} options.isListenJSError 是否监听JS报错，默认为false
+ * @param {Object} options.modalProps 弹窗配置
+ * @param {String} options.modalProps.content 弹窗内容
+ * @param {Element} options.modalProps.mountedEl 弹窗挂载节点，默认为body
+ * @param {String} options.type 弹窗样式类型，默认为'qingmu', 可选值为'element'、'qingmu'、'custom'(暂不支持)
  * @returns {Void} 无返回值
  */
 
