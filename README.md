@@ -3,9 +3,12 @@
  * @Author: 舌红
  * @Date: 2024-01-10 17:00:10
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-20 10:55:29
+ * @LastEditTime: 2024-02-20 11:53:51
 -->
 # update-listener-webpack-loader
+
+需配合 [vue-cli-plugin-update-listener](https://github.com/Miraiiiii/vue-cli-plugin-update-listener) 使用
+
 
 ## 使用说明
 ```powershell

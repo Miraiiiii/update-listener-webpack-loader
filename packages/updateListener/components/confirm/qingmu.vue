@@ -3,14 +3,11 @@
  * @Author: 舌红
  * @Date: 2024-02-19 11:59:50
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-20 10:52:55
+ * @LastEditTime: 2024-02-20 11:43:08
 -->
 <template>
   <ConfirmMask>
-    <div class="confirm-qingmu__body" :style="{
-      background: `url(${bgImg}) no-repeat`,
-      backgroundSize: 'contain'
-    }">
+    <div class="confirm-qingmu__body">
       <div class="confirm-qingmu__wrapper">
         <div class="confirm-qingmu__title">
           新版上线啦！
@@ -36,12 +33,7 @@ import DefaultMixins from '../../mixins/default'
 
 export default {
   name: 'UpdateConfirmQingmu',
-  mixins: [DefaultMixins],
-  data() {
-    return {
-      bgImg: require('../../assets/updateConfirm.png')
-    }
-  }
+  mixins: [DefaultMixins]
 }
 
 </script>

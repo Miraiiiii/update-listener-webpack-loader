@@ -3,13 +3,16 @@
  * @Author: 舌红
  * @Date: 2024-01-10 17:00:02
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-20 10:33:23
+ * @LastEditTime: 2024-02-20 11:43:38
  */
 const { defineConfig } = require('@vue/cli-service')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
 
 const timeStamp = new Date().getTime()
 module.exports = defineConfig({
+  publicPath: './',
+  outputDir: 'lib',
+  assetsDir: 'static',
   transpileDependencies: true,
   pages: {
     index: {
@@ -23,7 +26,7 @@ module.exports = defineConfig({
   },
   configureWebpack: {
     output: {
-      filename: `[name].${timeStamp}.js`,
+      filename: `[name].${timeStamp}.js`
     }
   }
 })
