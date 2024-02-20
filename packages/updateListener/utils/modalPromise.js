@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-10 12:00:21
  * @LastEditors: 舌红
- * @LastEditTime: 2024-01-10 14:46:52
+ * @LastEditTime: 2024-02-20 09:54:49
  */
 /**
  * modal调用promise化

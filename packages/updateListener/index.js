@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-09 17:38:09
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-19 14:47:57
+ * @LastEditTime: 2024-02-19 18:09:33
  */
 
 import { openConfirm } from './components/confirm/confirm'
@@ -20,6 +20,7 @@ import { openConfirm } from './components/confirm/confirm'
  * @param {String} options.modalProps.content 弹窗内容
  * @param {Element} options.modalProps.mountedEl 弹窗挂载节点，默认为body
  * @param {String} options.type 弹窗样式类型，默认为'qingmu', 可选值为'element'、'qingmu'、'custom'(暂不支持)
+ * @param {Boolean} options.showTest 弹窗常显测试
  * @returns {Void} 无返回值
  */
 
@@ -54,7 +55,7 @@ const ListenVersion = {
 
     // 开始检查更新
     const startListen = async () => {
-      if (options.isTip === false || process.env.NODE_ENV === 'development') return
+      if (!options.showTest && (options.isTip === false || process.env.NODE_ENV === 'development')) return
       const versionInfo = await getVersion()
       if (!versionInfo) return
       currebtVersion = versionInfo.commitHash
@@ -63,7 +64,7 @@ const ListenVersion = {
       setInterValId = setInterval(async () => {
         const isUpdate = await checkUpdate()
         // 判断versionInfo.message是否有--no-tip字符，如果有则不提示更新
-        if (isUpdate && versionInfo.isTip) {
+        if ((isUpdate && versionInfo.isTip) || options.showTest) {
           console.log('有新版本')
           stopUpdate()
           await callConfirm()

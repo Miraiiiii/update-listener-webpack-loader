@@ -3,15 +3,20 @@
  * @Author: 舌红
  * @Date: 2024-01-10 17:00:02
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-19 16:54:53
+ * @LastEditTime: 2024-02-20 10:53:40
  */
 import Vue from 'vue'
 import App from './App.vue'
-import ListenerLoader from '../packages'
+import ListenerLoader from '../lib/update-listener-webpack-loader.umd.min.js'
+import '../lib/update-listener-webpack-loader.css'
+// import ListenerLoader from '../packages'
 
 Vue.config.productionTip = false
 
-Vue.use(ListenerLoader, {})
+Vue.use(ListenerLoader, {
+  interval: 1000,
+  showTest: true
+})
 
 new Vue({
   render: h => h(App),
