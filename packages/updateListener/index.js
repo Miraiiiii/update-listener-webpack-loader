@@ -3,7 +3,7 @@
  * @Author: 舌红
  * @Date: 2024-01-09 17:38:09
  * @LastEditors: 舌红
- * @LastEditTime: 2024-02-19 18:09:33
+ * @LastEditTime: 2024-02-22 10:04:29
  */
 
 import { openConfirm } from './components/confirm/confirm'
@@ -28,6 +28,7 @@ const ListenVersion = {
   install(Vue, options) {
     let currebtVersion
     let setInterValId
+    let isUpdate = false
 
     // 获取版本信息
     const getVersion = async () => {
@@ -57,12 +58,11 @@ const ListenVersion = {
     const startListen = async () => {
       if (!options.showTest && (options.isTip === false || process.env.NODE_ENV === 'development')) return
       const versionInfo = await getVersion()
-      if (!versionInfo) return
+      if (!versionInfo || isUpdate) return
       currebtVersion = versionInfo.commitHash
-
       console.log('开始检查更新')
       setInterValId = setInterval(async () => {
-        const isUpdate = await checkUpdate()
+        isUpdate = options.showTest || (await checkUpdate())
         // 判断versionInfo.message是否有--no-tip字符，如果有则不提示更新
         if ((isUpdate && versionInfo.isTip) || options.showTest) {
           console.log('有新版本')
